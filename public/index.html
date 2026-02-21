@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>苹果冷库数字孪生</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>苹果仓储数字孪生平台</h1>
+      <nav class="tabs">
+        <button class="tab active" data-page="overview">展示页面1：全景监控</button>
+        <button class="tab" data-page="control">展示页面2：设备控制</button>
+        <button class="tab" data-page="warning">展示页面3：腐败预警</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="overview" class="page active">
+        <div class="scene-wrap">
+          <canvas id="warehouseScene"></canvas>
+          <div class="legend">
+            <p><span class="dot heat"></span> 乙烯浓度雾化热力区</p>
+            <p><span class="dot alert"></span> 腐败风险超阈值果筐</p>
+          </div>
+        </div>
+        <div class="charts">
+          <div id="lineChart"></div>
+          <div id="radarChart"></div>
+        </div>
+      </section>
+
+      <section id="control" class="page">
+        <div class="panel" id="devicePanel"></div>
+        <div class="feedback" id="feedback">等待设备指令...</div>
+      </section>
+
+      <section id="warning" class="page">
+        <ul id="warningList"></ul>
+      </section>
+    </main>
+
+    <audio id="alarmAudio" preload="auto">
+      <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg" />
+    </audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

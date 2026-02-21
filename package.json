@@ -1,0 +1,10 @@
+{
+  "name": "apple-3d-cold-storage",
+  "version": "1.0.0",
+  "description": "Three.js + ECharts digital twin demo for apple cold storage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js"
+  }
+}
